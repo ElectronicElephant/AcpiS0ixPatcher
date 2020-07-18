@@ -1,7 +1,11 @@
-ACPIPatcher: S0ix enabler
+ACPIPatcher: S0ix disabler
 =======================================
 
-This simple UEFI application patches your ACPI table to force enable S0 Low Power State 
+## Dell's Modern Sleep SUCKS!
+
+This repo does exactly the **opposite** to the original repo. Great thanks to @imbushuo.
+
+This simple UEFI application patches your ACPI table to force disable S0 Low Power State 
 (aka. [Connected Standby](https://docs.microsoft.com/en-us/windows-hardware/design/device-experiences/modern-standby)) 
 regardless of platform configuration. Currently you have to run
 it every time before booting into Windows.

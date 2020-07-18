@@ -144,20 +144,22 @@ EFI_STATUS efi_main(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE *SystemTable)
 
 		if ((Fadt->Flags >> 21) & 1U)
 		{
-			Print(L"S0 Low Power Idle State Flag is already enabled on this platform \n");
-		}
-		else
-		{
+			Print(L"S0 Low Power Idle State Flag is enabled on this platform \n");
+
 			Print(L"Setting S0 Low Power Idle State Flag \n");
 
-			// Low Power S0 Idle (V5) is bit 21, enable it
-			Fadt->Flags |= 1UL << 21;
+			// Low Power S0 Idle (V5) is bit 21, disable it
+			Fadt->Flags |= 0UL << 21;
 
 			// Re-calc checksum
 			Print(L"Setting new checksum \n");
 			SetAcpiSdtChecksum(Fadt);
 
 			Print(L"FADT patch completed. \n");
+		}
+		else
+		{
+			Print(L"S0 Low Power Idle State Flag is already disabled on this platform \n");
 		}
 	}
 
