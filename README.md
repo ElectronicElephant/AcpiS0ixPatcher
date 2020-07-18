@@ -10,8 +10,16 @@ This simple UEFI application patches your ACPI table to force disable S0 Low Pow
 regardless of platform configuration. Currently you have to run
 it every time before booting into Windows.
 
-**Please note that Windows do not support seamless transition between ACPI S3 and S0ix. A
-fresh installation is required.**
+## Notes
+
+Microsoft reported that
+```
+Please note that Windows do not support seamless transition between ACPI S3 and S0ix. A
+fresh installation is required.
+```
+But, before `Win 10 20H1` update, you can simply disable S0 and use S3 by setting `CsEnabled=0` in the register.
+
+However, Microsoft has blocked it since `Win 10 20H1` update.
 
 ## Prerequisites
 
@@ -43,3 +51,13 @@ the default _Workloads_ screen:
 
 You also need to ensure that you have Windows SDK 10.0.14393.0 or later installed,
 as this is the minimum version with support for ARM64.
+
+## Usage
+
+First, you need to install [rEFInd](https://www.rodsbooks.com/refind/).
+
+Then, put the binary to `/EFI/refind/drivers_aach` and it should work.
+
+## Known issues
+
+Secure boot no longer works. So, you have to disable `BitLocker`, or you have to enter PIN each time it boots.
