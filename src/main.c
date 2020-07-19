@@ -149,7 +149,7 @@ EFI_STATUS efi_main(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE *SystemTable)
 			Print(L"Setting S0 Low Power Idle State Flag \n");
 
 			// Low Power S0 Idle (V5) is bit 21, disable it
-			Fadt->Flags -= 1UL << 21;
+			Fadt->Flags &= ~(1UL<< 21);
 
 			// Re-calc checksum
 			Print(L"Setting new checksum \n");
