@@ -1,7 +1,9 @@
 ACPIPatcher: S0ix disabler
 =======================================
 
-## Dell's Modern Sleep SUCKS!
+## This EFI application lets you to disable Windows Modern Standby / Connected Standby / S0 Sleep on ANY platform.
+
+## Dell's Modern Standby SUCKS!
 
 This repo does exactly the **opposite** to the original repo. Great thanks to @imbushuo.
 
