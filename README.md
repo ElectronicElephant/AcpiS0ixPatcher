@@ -58,7 +58,7 @@ as this is the minimum version with support for ARM64.
 
 First, you need to install [rEFInd](https://www.rodsbooks.com/refind/).
 
-Then, put the binary to `/EFI/refind/drivers_aach` and it should work.
+Then, put the binary to `/EFI/refind/drivers_{arch}` and it should work.
 
 ## Known issues
 
