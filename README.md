@@ -62,4 +62,4 @@ Then, put the binary to `/EFI/refind/drivers_{arch}` and it should work.
 
 ## Known issues
 
-Secure boot no longer works. So, you have to disable `BitLocker`, or you have to enter PIN each time it boots.
+Secure boot no longer works. However, you may find some workaround but personally, I don't recommand it. Simply disable Secure Boot in your BIOS should be fine. `Bitlocker` also works.
