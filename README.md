@@ -16,12 +16,14 @@ it every time before booting into Windows.
 
 Microsoft reported that
 ```
-Please note that Windows do not support seamless transition between ACPI S3 and S0ix. A
-fresh installation is required.
+Please note that Windows do not support seamless transition between ACPI S3 and S0ix. A fresh installation is required.
 ```
-But, before `Win 10 20H1` update, you can simply disable S0 and use S3 by setting `CsEnabled=0` in the register.
+But, before `Win 10 20H1` update, you can simply disable S0 and use S3 by setting `CsEnabled=0` in the register editor.
+Microsoft has removed it since `Win 10 20H1` update, and setting the register will not take any effect.
+After Windows 11 is released, Microsoft quietly added this option back, but renamed it into `PlatformAoAcOverride`.
 
-However, Microsoft has blocked it since `Win 10 20H1` update.
+Therefore, unless you are sticking with Windows 10, you should first play the registry hack, since it's much easier than
+using this project. Please let me know if you find a situation where this project is especially desired and useful.
 
 ## Prerequisites
 
@@ -62,4 +64,4 @@ Then, put the binary to `/EFI/refind/drivers_{arch}` and it should work.
 
 ## Known issues
 
-Secure boot no longer works. However, you may find some workaround but personally, I don't recommand it. Simply disable Secure Boot in your BIOS should be fine. `Bitlocker` also works.
+Secure boot no longer works.
